@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  font-size: 1.1rem;
+  padding: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(89.54deg,
+      #de8adb 0.42%,
+      rgba(223, 170, 221, 0.49) 103.53%,
+      rgba(248, 237, 248, 0.103653) 103.54%,
+      rgba(243, 223, 242, 0.17959) 103.55%);
+}
+
+.calculator {
+  padding: 2rem 1.5rem;
+  background: rgba(245, 245, 245, 0.21);
+  backdrop-filter: blur(1.2px);
+  display: grid;
+  width: 450px;
+  gap: 1rem;
+  grid-template-areas:
+    "display display display display"
+    "ac c btn-perc btn-divide"
+    "btn7 btn8 btn9 btn-sub"
+    "btn4 btn5 btn6 btn-add"
+    "btn1 btn2 btn3 btn-mul"
+    "btn0 btn0 btn-dot btn-equals";
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 22px;
+}
+
+.calculator div {
+  height: 50px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 20px rgba(220, 222, 140, 0.4);
+  border: 1px solid;
+  filter: drop-shadow(-12px 12px 14px rgba(0, 0, 0, 0.2));
+}
+
+.display {
+  grid-area: display;
+}
+
+.calculator .display {
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  justify-content: end;
+  padding-right: 1rem;
+  height: 5rem;
+  margin-bottom: 3rem;
+}
+
+.calculator div:hover {
+  transform: translateY(-3px);
+  background-color: white;
+  box-shadow: 5px 10px 8px rgba(220, 222, 140, 1);
+}
+
+.calculator div:active {
+  transform: translateY(-1px);
+  box-shadow: 5px 5px 10px rgba(220, 222, 140, 0.5);
+}
+
+.calculator div:link,
+.calculator div:visited {
+  transition: all 0.2s;
+}
+
+.circle {
+  position: relative;
+  bottom: 200px;
+  right: 30px;
+  height: 10rem;
+  width: 10rem;
+  /* From https://css.glass */
+  background: rgba(138, 177, 222, 0.43);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  filter: blur(1.4px);
+  /* -webkit-backdrop-filter: blur(1.2px); */
+  border: 2px solid rgba(138, 177, 222, 0.25);
+  border-radius: 50%;
+  /* transform: translate(-10%, 10%); */
+  z-index: -1;
+}
+
+.prank {
+  animation: shake 1s;
+}
+
+.circle1 {
+  background: linear-gradient(to right, red, purple);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  filter: blur(1.2px);
+  top: 200px;
+  left: 20px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(10px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.btn-ac {
+  grid-area: ac;
+}
+
+.btn-c {
+  grid-area: c;
+}
+
+.btn-perc {
+  grid-area: btn-perc;
+}
+
+.btn-divide {
+  grid-area: btn-divide;
+}
+
+.btn-7 {
+  grid-area: btn7;
+}
+
+.btn-8 {
+  grid-area: btn8;
+}
+
+.btn-9 {
+  grid-area: btn9;
+}
+
+.btn-mul {
+  grid-area: btn-mul;
+}
+
+.btn-4 {
+  grid-area: btn4;
+}
+
+.btn-5 {
+  grid-area: btn5;
+}
+
+.btn-6 {
+  grid-area: btn6;
+}
+
+.btn-sub {
+  grid-area: btn-sub;
+}
+
+.btn-1 {
+  grid-area: btn1;
+}
+
+.btn-2 {
+  grid-area: btn2;
+}
+
+.btn-3 {
+  grid-area: btn3;
+}
+
+.btn-add {
+  grid-area: btn-add;
+}
+
+.btn-0 {
+  grid-area: btn0;
+}
+
+.btn-dot {
+  grid-area: btn-dot;
+}
+
+.btn-equals {
+  grid-area: btn-equals;
+}
